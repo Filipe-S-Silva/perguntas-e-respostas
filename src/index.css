@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Radio customizado usado nas alternativas */
+.quiz-radio {
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 9999px;
+  border: 2px solid currentColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.2s ease;
+}
+
+.quiz-radio-dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 9999px;
+  background: currentColor;
+}
+
+::selection {
+  background: #7c3aed;
+  color: #ffffff;
+}
+
+/* Scrollbar discreta, mantendo o tema */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.4);
+  border-radius: 9999px;
+}
