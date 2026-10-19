@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Paleta "dia de jogo": concreto de arquibancada, petróleo de placar e
+ * amarelo de refletor. Neutra de propósito: não puxa para as cores de
+ * nenhuma das torcidas citadas nas perguntas.
+ * Valores em canais "R G B" para funcionar com opacidade no Tailwind.
+ */
+:root {
+  --canvas: 237 239 234; /* #EDEFEA concreto */
+  --panel: 255 255 255;
+  --raised: 245 246 242; /* #F5F6F2 */
+  --ink: 15 34 48; /* #0F2230 petróleo */
+  --line: 208 214 206; /* #D0D6CE */
+  --accent: 242 176 30; /* #F2B01E refletor */
+  --accent-ink: 15 34 48;
+  --ok: 24 128 96; /* #188060 gramado */
+  --bad: 190 53 48; /* #BE3530 cartão */
+  --scoreboard: 15 34 48;
+  --focus: 15 34 48;
+  color-scheme: light;
+}
+
+.dark {
+  --canvas: 11 24 34; /* #0B1822 */
+  --panel: 17 36 49; /* #112431 */
+  --raised: 22 48 63; /* #16303F */
+  --ink: 234 240 238; /* #EAF0EE */
+  --line: 36 64 79; /* #24404F */
+  --accent: 245 184 46; /* #F5B82E */
+  --accent-ink: 11 24 34;
+  --ok: 60 203 156; /* #3CCB9C */
+  --bad: 255 122 112; /* #FF7A70 */
+  --scoreboard: 5 13 19; /* #050D13 */
+  --focus: 245 184 46;
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: "Archivo", system-ui, sans-serif;
+  background: rgb(var(--canvas));
+  color: rgb(var(--ink));
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Títulos e números grandes: Archivo na largura condensada, estilo placar. */
+.font-display {
+  font-family: "Archivo", system-ui, sans-serif;
+  font-stretch: 72%;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+/* Foco visível para navegação por teclado. */
+:focus-visible {
+  outline: 3px solid rgb(var(--focus));
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: rgb(var(--accent));
+  color: rgb(var(--accent-ink));
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--line));
+  border-radius: 9999px;
+}
